@@ -4,7 +4,7 @@
 ######
 
 # 工作流名称
-name: Sync-Images-To-DockerHub
+name: Sync-K8s-Images-To-DockerHub
 
 run-name: ${{ github.actor }} is Sync Images to DockerHub.
 
