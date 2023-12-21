@@ -52,38 +52,38 @@ jobs:
         # ingress-nginx 同步
         ######
         # Nginx Ingress Controller 的核心组件
-        skopeo copy --all docker://registry.k8s.io/ingress-nginx/controller:v1.8.4 docker://docker.io/teresajw/ingress-nginx-controller:v1.8.4
-        skopeo copy --all docker://registry.k8s.io/ingress-nginx/controller:v1.9.4 docker://docker.io/teresajw/ingress-nginx-controller:v1.9.4
+        #skopeo copy --all docker://registry.k8s.io/ingress-nginx/controller:v1.8.4 docker://docker.io/teresajw/ingress-nginx-controller:v1.8.4
+        #skopeo copy --all docker://registry.k8s.io/ingress-nginx/controller:v1.9.4 docker://docker.io/teresajw/ingress-nginx-controller:v1.9.4
         
         # 管理 SSL/TLS 证书
-        skopeo copy --all docker://registry.k8s.io/ingress-nginx/kube-webhook-certgen:v20231011-8b53cabe0 docker://docker.io/teresajw/ingress-nginx-kube-webhook-certgen:v20231011-8b53cabe0
+        #skopeo copy --all docker://registry.k8s.io/ingress-nginx/kube-webhook-certgen:v20231011-8b53cabe0 docker://docker.io/teresajw/ingress-nginx-kube-webhook-certgen:v20231011-8b53cabe0
         
         # 后端服务，通常用于处理未匹配到的请求
-        skopeo copy --all docker://registry.k8s.io/defaultbackend-amd64:1.5 docker://docker.io/teresajw/ingress-nginx-defaultbackend-amd64:1.5
+        #skopeo copy --all docker://registry.k8s.io/defaultbackend-amd64:1.5 docker://docker.io/teresajw/ingress-nginx-defaultbackend-amd64:1.5
 
         ######
         # k8s 镜像同步
         ######
         # 控制中枢
-        skopeo copy --all docker://registry.k8s.io/kube-apiserver:v1.27.4 docker://docker.io/teresajw/kube-apiserver:v1.27.4
+        #skopeo copy --all docker://registry.k8s.io/kube-apiserver:v1.27.4 docker://docker.io/teresajw/kube-apiserver:v1.27.4
         
         # 状态管理器
-        skopeo copy --all docker://registry.k8s.io/kube-controller-manager:v1.27.4 docker://docker.io/teresajw/kube-controller-manager:v1.27.4
+        #skopeo copy --all docker://registry.k8s.io/kube-controller-manager:v1.27.4 docker://docker.io/teresajw/kube-controller-manager:v1.27.4
         
         # 调度器
-        skopeo copy --all docker://registry.k8s.io/kube-scheduler:v1.27.4 docker://docker.io/teresajw/kube-scheduler:v1.27.4
+        #skopeo copy --all docker://registry.k8s.io/kube-scheduler:v1.27.4 docker://docker.io/teresajw/kube-scheduler:v1.27.4
         
         # 代理负载器
-        skopeo copy --all docker://registry.k8s.io/kube-proxy:v1.27.4 docker://docker.io/teresajw/kube-proxy:v1.27.4
+        #skopeo copy --all docker://registry.k8s.io/kube-proxy:v1.27.4 docker://docker.io/teresajw/kube-proxy:v1.27.4
         
         # 基础依赖容器，隔离/共享/通信/生命周期
-        skopeo copy --all docker://registry.k8s.io/pause:3.9 docker://docker.io/teresajw/pause:3.9
+        #skopeo copy --all docker://registry.k8s.io/pause:3.9 docker://docker.io/teresajw/pause:3.9
         
         # 集群配置数据库
-        skopeo copy --all docker://registry.k8s.io/etcd:3.5.7-0 docker://docker.io/teresajw/etcd:3.5.7-0
+        #skopeo copy --all docker://registry.k8s.io/etcd:3.5.7-0 docker://docker.io/teresajw/etcd:3.5.7-0
         
         # 集群内部Service的解析
-        skopeo copy --all docker://registry.k8s.io/coredns/coredns:v1.10.1 docker://docker.io/teresajw/coredns:v1.10.1
+        #skopeo copy --all docker://registry.k8s.io/coredns/coredns:v1.10.1 docker://docker.io/teresajw/coredns:v1.10.1
 
         ######
         # tekton 镜像同步
@@ -96,7 +96,6 @@ jobs:
         skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/nop:v0.45.0 docker://teresajw/tektoncd-pipeline-nop:v0.45.0
         skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/sidecarlogresults:v0.45.0 docker://teresajw/tektoncd-pipeline-sidecarlogresults:v0.45.0
         skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/imagedigestexporter:v0.45.0 docker://teresajw/tektoncd-pipeline-imagedigestexporter:v0.45.0
-        skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/pullrequest-init:v0.45.0 docker://teresajw/tektoncd-pipeline-pullrequest-init:v0.45.0
         skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/workingdirinit:v0.45.0 docker://teresajw/tektoncd-pipeline-workingdirinit:v0.45.0
-        
+                
   
