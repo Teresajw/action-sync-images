@@ -85,3 +85,18 @@ jobs:
         # 集群内部Service的解析
         skopeo copy --all docker://registry.k8s.io/coredns/coredns:v1.10.1 docker://docker.io/teresajw/coredns:v1.10.1
 
+        ######
+        # tekton 镜像同步
+        ######
+        skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/controller:v0.45.0 docker://teresajw/tektoncd-pipeline-controller:v0.45.0
+        skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/resolvers:v0.45.0 docker://teresajw/tektoncd-pipeline-resolvers:v0.45.0
+        skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/webhook:v0.45.0 docker://teresajw/tektoncd-pipeline-webhook:v0.45.0
+        skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/git-init:v0.45.0 docker://teresajw/tektoncd-pipeline-git-init:v0.45.0
+        skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/entrypoint:v0.45.0 docker://teresajw/tektoncd-pipeline-entrypoint:v0.45.0
+        skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/nop:v0.45.0 docker://teresajw/tektoncd-pipeline-nop:v0.45.0
+        skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/sidecarlogresults:v0.45.0 docker://teresajw/tektoncd-pipeline-sidecarlogresults:v0.45.0
+        skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/imagedigestexporter:v0.45.0 docker://teresajw/tektoncd-pipeline-imagedigestexporter:v0.45.0
+        skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/pullrequest-init:v0.45.0 docker://teresajw/tektoncd-pipeline-pullrequest-init:v0.45.0
+        skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/workingdirinit:v0.45.0 docker://teresajw/tektoncd-pipeline-workingdirinit:v0.45.0
+        
+  
