@@ -52,14 +52,14 @@ jobs:
         # ingress-nginx 同步
         ######
         # Nginx Ingress Controller 的核心组件
-        skopeo copy --all docker://registry.k8s.io/ingress-nginx/controller:v1.8.4 docker://docker.io/teresajw/ingress-nginx/controller:v1.8.4
-        skopeo copy --all docker://registry.k8s.io/ingress-nginx/controller:v1.9.4 docker://docker.io/teresajw/ingress-nginx/controller:v1.9.4
+        skopeo copy --all docker://registry.k8s.io/ingress-nginx/controller:v1.8.4 docker://docker.io/teresajw/ingress-nginx-controller:v1.8.4
+        skopeo copy --all docker://registry.k8s.io/ingress-nginx/controller:v1.9.4 docker://docker.io/teresajw/ingress-nginx-controller:v1.9.4
         
         # 管理 SSL/TLS 证书
-        skopeo copy --all docker://registry.k8s.io/ingress-nginx/kube-webhook-certgen:v20231011-8b53cabe0 docker://docker.io/teresajw/ingress-nginx/kube-webhook-certgen:v20231011-8b53cabe0
+        skopeo copy --all docker://registry.k8s.io/ingress-nginx/kube-webhook-certgen:v20231011-8b53cabe0 docker://docker.io/teresajw/ingress-nginx-kube-webhook-certgen:v20231011-8b53cabe0
         
         # 后端服务，通常用于处理未匹配到的请求
-        skopeo copy --all docker://registry.k8s.io/defaultbackend-amd64:v1.5 docker://docker.io/teresajw/ingress-nginx/defaultbackend-amd64:v1.5
+        skopeo copy --all docker://registry.k8s.io/defaultbackend-amd64:v1.5 docker://docker.io/teresajw/ingress-nginx-defaultbackend-amd64:v1.5
 
         ######
         # k8s 镜像同步
