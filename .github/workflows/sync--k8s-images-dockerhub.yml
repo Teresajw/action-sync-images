@@ -97,5 +97,9 @@ jobs:
         skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/sidecarlogresults:v0.45.0 docker://teresajw/tektoncd-pipeline-sidecarlogresults:v0.45.0
         skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/imagedigestexporter:v0.45.0 docker://teresajw/tektoncd-pipeline-imagedigestexporter:v0.45.0
         skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/workingdirinit:v0.45.0 docker://teresajw/tektoncd-pipeline-workingdirinit:v0.45.0
+        skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/controller:v0.23.2 docker://teresajw/tektoncd-pipeline-controller:v0.23.2
+        skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/webhook:v0.23.2 docker://teresajw/tektoncd-pipeline-webhook:v0.23.2
+        skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/interceptors:v0.23.2 docker://teresajw/tektoncd-pipeline-interceptors:v0.23.2
+        skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/eventlistenersink:v0.23.2 docker://teresajw/tektoncd-pipeline-eventlistenersink:v0.23.2
                 
   
