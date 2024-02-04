@@ -54,12 +54,17 @@ jobs:
         # Nginx Ingress Controller 的核心组件
         #skopeo copy --all docker://registry.k8s.io/ingress-nginx/controller:v1.8.4 docker://docker.io/teresajw/ingress-nginx-controller:v1.8.4
         #skopeo copy --all docker://registry.k8s.io/ingress-nginx/controller:v1.9.4 docker://docker.io/teresajw/ingress-nginx-controller:v1.9.4
+        skopeo copy --all docker://registry.k8s.io/ingress-nginx/controller:v1.9.6 docker://docker.io/teresajw/ingress-nginx-controller:v1.9.6
+
         
         # 管理 SSL/TLS 证书
-        #skopeo copy --all docker://registry.k8s.io/ingress-nginx/kube-webhook-certgen:v20231011-8b53cabe0 docker://docker.io/teresajw/ingress-nginx-kube-webhook-certgen:v20231011-8b53cabe0
+        skopeo copy --all docker://registry.k8s.io/ingress-nginx/kube-webhook-certgen:v20231226-1a7112e06 docker://docker.io/teresajw/ingress-nginx-kube-webhook-certgen:v20231226-1a7112e06
         
         # 后端服务，通常用于处理未匹配到的请求
         #skopeo copy --all docker://registry.k8s.io/defaultbackend-amd64:1.5 docker://docker.io/teresajw/ingress-nginx-defaultbackend-amd64:1.5
+        
+        # 监控
+        skopeo copy --all docker://registry.k8s.io/metrics-server/metrics-server:v0.7.0 docker://docker.io/teresajw/metrics-server:v0.7.0
 
         ######
         # k8s 镜像同步
@@ -98,10 +103,12 @@ jobs:
         #skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/imagedigestexporter:v0.45.0 docker://teresajw/tektoncd-pipeline-imagedigestexporter:v0.45.0
         #skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/workingdirinit:v0.45.0 docker://teresajw/tektoncd-pipeline-workingdirinit:v0.45.0
         
-        skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/controller:v0.23.2 docker://teresajw/tektoncd-pipeline-controller:v0.23.2
-        skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/webhook:v0.23.2 docker://teresajw/tektoncd-pipeline-webhook:v0.23.2
-        skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/interceptors:v0.23.2 docker://teresajw/tektoncd-pipeline-interceptors:v0.23.2
-        skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/eventlistenersink:v0.23.2 docker://teresajw/tektoncd-pipeline-eventlistenersink:v0.23.2
-        skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/dashboard/cmd/dashboard:v0.35.1 docker://teresajw/tektoncd-pipeline-dashboard:v0.35.1
+        #skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/controller:v0.23.2 docker://teresajw/tektoncd-pipeline-controller:v0.23.2
+        #skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/webhook:v0.23.2 docker://teresajw/tektoncd-pipeline-webhook:v0.23.2
+        #skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/interceptors:v0.23.2 docker://teresajw/tektoncd-pipeline-interceptors:v0.23.2
+        #skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/eventlistenersink:v0.23.2 docker://teresajw/tektoncd-pipeline-eventlistenersink:v0.23.2
+        #skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/dashboard/cmd/dashboard:v0.35.1 docker://teresajw/tektoncd-pipeline-dashboard:v0.35.1
+
+        
                 
   
