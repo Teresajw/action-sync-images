@@ -58,13 +58,13 @@ jobs:
 
         
         # 管理 SSL/TLS 证书
-        skopeo copy --all docker://registry.k8s.io/ingress-nginx/kube-webhook-certgen:v20231226-1a7112e06 docker://docker.io/teresajw/ingress-nginx-kube-webhook-certgen:v20231226-1a7112e06
+        #skopeo copy --all docker://registry.k8s.io/ingress-nginx/kube-webhook-certgen:v20231226-1a7112e06 docker://docker.io/teresajw/ingress-nginx-kube-webhook-certgen:v20231226-1a7112e06
         
         # 后端服务，通常用于处理未匹配到的请求
         #skopeo copy --all docker://registry.k8s.io/defaultbackend-amd64:1.5 docker://docker.io/teresajw/ingress-nginx-defaultbackend-amd64:1.5
         
         # 监控
-        skopeo copy --all docker://registry.k8s.io/metrics-server/metrics-server:v0.7.0 docker://docker.io/teresajw/metrics-server:v0.7.0
+        #skopeo copy --all docker://registry.k8s.io/metrics-server/metrics-server:v0.7.0 docker://docker.io/teresajw/metrics-server:v0.7.0
 
         ######
         # k8s 镜像同步
@@ -110,5 +110,5 @@ jobs:
         #skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/dashboard/cmd/dashboard:v0.35.1 docker://teresajw/tektoncd-pipeline-dashboard:v0.35.1
 
         
-                
+        skopeo copy --all docker://registry.k8s.io/sig-storage/nfs-subdir-external-provisioner:v4.0.2 docker://docker.io/teresajw/nfs-subdir-external-provisioner:v4.0.2
   
