@@ -110,5 +110,6 @@ jobs:
         #skopeo copy --all docker://gcr.io/tekton-releases/github.com/tektoncd/dashboard/cmd/dashboard:v0.35.1 docker://teresajw/tektoncd-pipeline-dashboard:v0.35.1
 
         
-        skopeo copy --all docker://registry.k8s.io/sig-storage/nfs-subdir-external-provisioner:v4.0.2 docker://docker.io/teresajw/nfs-subdir-external-provisioner:v4.0.2
-  
+        #skopeo copy --all docker://registry.k8s.io/sig-storage/nfs-subdir-external-provisioner:v4.0.2 docker://docker.io/teresajw/nfs-subdir-external-provisioner:v4.0.2
+        
+        skopeo copy --all docker://registry.k8s.io/dns/k8s-dns-node-cache:1.22.28 docker://docker.io/teresajw/k8s-dns-node-cache:1.22.28
