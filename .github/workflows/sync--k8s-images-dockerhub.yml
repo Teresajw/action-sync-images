@@ -112,4 +112,6 @@ jobs:
         
         #skopeo copy --all docker://registry.k8s.io/sig-storage/nfs-subdir-external-provisioner:v4.0.2 docker://docker.io/teresajw/nfs-subdir-external-provisioner:v4.0.2
         
-        skopeo copy --all docker://registry.k8s.io/dns/k8s-dns-node-cache:1.22.28 docker://docker.io/teresajw/k8s-dns-node-cache:1.22.28
+        #skopeo copy --all docker://registry.k8s.io/dns/k8s-dns-node-cache:1.22.28 docker://docker.io/teresajw/k8s-dns-node-cache:1.22.28
+
+        skopeo copy -all docker://mcr.microsoft.com/playwright/python:v1.42.0-jammy docker://docker.io/teresajw/playwright/python:v1.42.0-jammy
