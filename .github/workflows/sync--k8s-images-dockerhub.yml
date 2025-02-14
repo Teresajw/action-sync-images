@@ -116,4 +116,4 @@ jobs:
 
         #skopeo copy --all docker://mcr.microsoft.com/playwright/python:v1.42.0-jammy docker://docker.io/teresajw/playwright:v1.42.0-jammy
         
-        skopeo copy --all docker://library/node/node:22.12-alpine docker://docker.io/teresajw/node:22.12-alpine
+        skopeo copy --all docker://library/node:22.12-alpine docker://docker.io/teresajw/node:22.12-alpine
